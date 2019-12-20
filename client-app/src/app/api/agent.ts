@@ -1,7 +1,21 @@
 import axios, { AxiosResponse } from 'axios';
 import { IActivity } from '../models/activity';
+import { history } from '../..';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'http://localhost:5000/api';
+
+axios.interceptors.response.use(undefined, error => {
+    const {status} = error.response;
+    if (status === 404 || status === 400) {
+        history.push('/notfound');
+    }
+    if (status === 500) {
+        toast.error('Server Error')
+        history.push('/notfound');
+    }
+    console.log(error.response.status);
+})
 
 const responseBody = (response: AxiosResponse) => response.data;
 

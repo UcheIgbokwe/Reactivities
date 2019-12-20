@@ -40,8 +40,7 @@ class ActivityStore {
                     this.activityRegistry.set(activity.id,activity);
                 });
                 this.loadingInitial = false;
-            })
-            
+            });
         } catch (error) {
             runInAction('load activity error',() => {
                 this.loadingInitial = false;
