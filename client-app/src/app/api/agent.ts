@@ -15,6 +15,7 @@ axios.interceptors.response.use(undefined, error => {
         history.push('/notfound');
     }
     console.log(error.response.status);
+    throw error;
 })
 
 const responseBody = (response: AxiosResponse) => response.data;
