@@ -12,9 +12,9 @@ open cmd and run: set BROWSWER=chrome
 Open another terminal in VsCode and cd client-app.
 Run the following command: 
 npm install
-npm install @types/react-widgets
 npm install react-widgets  react-widgets-date-fns
 npm install date-fns@2.0.0-alpha.13
+npm install @types/react-widgets@4.3.3
 npm start.
 
 
