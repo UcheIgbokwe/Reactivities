@@ -9,7 +9,9 @@ Run the following command next: dotnet watch run.
 
 # Step 2:
 open cmd and run: set BROWSWER=chrome
+
 Open another terminal in VsCode and cd client-app.
+
 Run the following command: 
 npm install
 npm install react-widgets  react-widgets-date-fns
