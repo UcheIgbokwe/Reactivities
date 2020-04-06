@@ -12,7 +12,7 @@
     "@types/revalidate": "^1.1.2",
     "@types/uuid": "^3.4.6",
     "axios": "^0.19.0",
-    "date-fns": "^2.11.0",
+    "date-fns": "^2.0.0-alpha.13",
     "final-form": "^4.16.1",
     "mobx": "^5.15.0",
     "mobx-react-lite": "^1.5.1",
@@ -22,8 +22,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-toastify": "^5.4.1",
-    "react-widgets": "^4.4.11",
-    "react-widgets-date-fns": "^4.0.26",
+    "react-widgets": "^4.5.0",
+    "react-widgets-date-fns": "^4.1.0",
     "revalidate": "^1.2.0",
     "semantic-ui-react": "^0.88.1",
     "typescript": "3.6.4"
@@ -48,5 +48,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }

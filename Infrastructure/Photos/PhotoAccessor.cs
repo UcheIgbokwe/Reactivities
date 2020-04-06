@@ -11,7 +11,6 @@ namespace Application.Photos
     public class PhotoAccessor : IPhotoAccessor
     {
         private readonly Cloudinary _cloudinary;
-        private readonly IOptions<CloudinarySettings> _config;
 
         public PhotoAccessor(IOptions<CloudinarySettings>config)
         {
@@ -23,7 +22,6 @@ namespace Application.Photos
             );
 
             _cloudinary = new Cloudinary(acc);
-            _config = config;
         }
 
         public PhotoUploadResult AddPhoto(IFormFile file)
@@ -37,7 +35,6 @@ namespace Application.Photos
                     var uploadParams = new ImageUploadParams
                     {
                         File = new FileDescription(file.FileName, stream),
-                        Proxy = _config.Value.Proxy,
                         Transformation = new Transformation().Height(500).Width(500).Crop("fill").Gravity("face")
                     };
                     uploadResult = _cloudinary.Upload(uploadParams);
