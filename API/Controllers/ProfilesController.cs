@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Application.Activities;
 using Application.Profiles;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Details = Application.Profiles.Details;
 
@@ -13,5 +14,11 @@ namespace API.Controllers
         {
             return await Mediator.Send(new Details.Query{Username = username});
         }
+
+        [HttpPut]
+        public async Task<ActionResult<Unit>> UpdateBio(BioUpdate.Command command)
+        {
+            return await Mediator.Send(command);
+        } 
     }
 }

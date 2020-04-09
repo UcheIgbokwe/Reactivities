@@ -17,6 +17,7 @@ export default class ProfileStore {
     @observable loadingProfile = true;
     @observable uploadingPhoto = false;
     @observable loadingPhoto = false;
+    @observable loadingBio = false;
 
     @computed get isCurrentUser() {
         if (this.rootstore.userStore.user && this.profile)
@@ -101,4 +102,19 @@ export default class ProfileStore {
             })
         }
     }
+
+    @action updateBio = async (profile: Partial<IProfile>) => {
+        try {
+            await agent.Profiles.updateBio(profile);
+            runInAction(() => {
+                if (profile.displayName !== this.rootstore.userStore.user!.displayName){
+                    this.rootstore.userStore.user!.displayName = profile.displayName!;
+                }
+                this.profile = {...this.profile!, ...profile};
+            })
+        }catch (error){
+            toast.error('Problem Uploading Bio');
+        }
+    }
+
 }
