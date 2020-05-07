@@ -5,6 +5,4 @@ obj
 appsettings.json
 *.db
 node_modules/
-API/appsettings.Development.json
-client-app/package-lock.json
-client-app/package.json
+wwwroot
