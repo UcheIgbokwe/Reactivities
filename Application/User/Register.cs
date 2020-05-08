@@ -11,6 +11,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Persistence;
 
 namespace Application.User
@@ -81,8 +82,8 @@ namespace Application.User
                     {
                         DisplayName = user.DisplayName,
                         Username = user.UserName,
-                        Token = _jwtGenerator.CreateToken(user),
-                        Image = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
+                        Token = _jwtGenerator.CreateToken(user)
+                        //Image = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
                     };
 
                 }else
